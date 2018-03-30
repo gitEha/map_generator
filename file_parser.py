@@ -1,5 +1,6 @@
 from pathlib import Path
 import re
+import shutil
 
 with open('C:/Users/Ranet/Documents/Machine Learning/games/osu map generator/MAPS/maplist.txt') as f:
     maps = f.read().split('\n')
@@ -18,6 +19,7 @@ for path in pathlist:
         map_file = map_file.replace(match[-1], '')
         for m in maps:
             if m in map_file:
+                shutil.copy(path,'C:/Users/Ranet/Documents/Machine Learning/games/osu map generator/MAPS/PROTOTYPE MAPS/TEST')
                 print(map_file, 'YES', len(maps))
                 maps.remove(m)
     except:
